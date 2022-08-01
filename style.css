@@ -112,9 +112,9 @@ button.btn-special:focus{
 button.btn-special:hover{
   color: var(--primary);
 }
-.container{
+/* .container{
   margin: 0 .5em;
-}
+} */
 
 .card{
   background-color: var(--light);
