@@ -116,6 +116,7 @@ function catnip(id) {
  * @param {Kitten} kitten 
  */
 function setKittenMood(kitten) {
+  // NOTE use switch statement
 }
 
 /**
