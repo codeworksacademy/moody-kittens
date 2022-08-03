@@ -7,6 +7,8 @@ let kittens = []
  * Then reset the form
  */
 function addKitten(event) {
+  event.preventDefault()//NOTE stops page refresh
+  let form= event.target
 }
 
 /**

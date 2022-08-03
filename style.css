@@ -120,7 +120,7 @@ button.btn-special:hover{
   background-color: var(--light);
   padding: 1em;
   box-shadow: var(--shadow);
-  border-radius: var(--corners);
+  border-radius: 5px;
 }
 
 .shadow{
