@@ -1,4 +1,6 @@
 let kittens = []
+loadKittens()
+drawKittens()//NOTE here it prevents page refresh from not drawing the kittens to the page
 /**
  * Called when submitting the new Kitten Form
  * This method will pull data from the form
@@ -9,6 +11,17 @@ let kittens = []
 function addKitten(event) {
   event.preventDefault()//NOTE stops page refresh
   let form= event.target
+  let kitten= {
+    id: generateId(),
+    name: form.name.value,
+    mood: 'Tolerant',
+    affection: 5,
+
+  }
+  kittens.push(kitten)
+  saveKittens()
+  form.reset()
+console.log(kitten);
 }
 
 /**
@@ -16,6 +29,8 @@ function addKitten(event) {
  * Saves the string to localstorage at the key kittens 
  */
 function saveKittens() {
+  window.localStorage.setItem(('kittens'),JSON.stringify(kittens))
+  drawKittens()
 }
 
 /**
@@ -24,12 +39,44 @@ function saveKittens() {
  * the kittens array to the retrieved array
  */
 function loadKittens() {
+ let storedKittens= JSON.parse(window.localStorage.getItem('kittens'))
+ if (storedKittens) {
+  kittens=storedKittens
+ }
 }
+
 
 /**
  * Draw all of the kittens to the kittens element
  */
 function drawKittens() {
+  let kittenElement = document.getElementById("kittens")
+  let kittensTemplate = ''
+  kittens.forEach((kitten) => {
+    kittensTemplate += `
+    <div class=" mt-2 card align-items-center bg-dark text-light">
+
+    <div class="col-4 mb-5">
+    <img src="/moody-logo.png" class="img-fluid"  alt="">
+    </div>
+
+<h3>Kitten : ${kitten.name}</h3>
+
+<h3>Mood : ${kitten.mood} </h3>
+
+<h3>Affection :  ${kitten.affection}</h3>
+
+<button type="button" onclick="clearKittens('${kitten.id}')">
+
+<img src="/resources/x-square-fill.svg" alt="">
+
+</button>
+</div>
+    `
+
+    
+  });
+  kittenElement.innerHTML = kittensTemplate
 }
 
 
@@ -39,6 +86,8 @@ function drawKittens() {
  * @return {Kitten}
  */
 function findKittenById(id) {
+  //NOTE return when wanting the value of the function
+return kittens.find((kitten) => (kitten.id=id))
 }
 
 
@@ -72,8 +121,14 @@ function setKittenMood(kitten) {
 /**
  * Removes all of the kittens from the array
  * remember to save this change
+ * NOTE had to place id within clearKittens() to find kitten by the id
  */
-function clearKittens(){
+function clearKittens(id){
+  // NOTE first finding the current kitten ID within the kittens[] then splicing it from the index
+  // NOTE possibly just try deleting all kittens rather just one individual one
+  let kittenIndex= kittens.findIndex((kitten) => (kitten.id ==id))
+  kittens.splice(kittenIndex, 1)
+  saveKittens()
 }
 
 /**

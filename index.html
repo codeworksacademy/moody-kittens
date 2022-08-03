@@ -6,11 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Moody Kittens | CodeWorks</title>
-<<<<<<< Updated upstream
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-=======
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
->>>>>>> Stashed changes
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/a2d3ad0e84.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   <link rel="shortcut icon" href="moody-logo.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Catamaran&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -18,27 +17,26 @@
 
 <body>
   <header class="bg-dark d-flex align-items-center p-3 space-between">
+    
     <img src="moody-logo.png" height="60" alt="Moody Kittens">
     <form class=" " onsubmit="addKitten(event)">
       <div class="d-flex">
-        <input placeholder="Name" type="text" name="name" />
-        <button class="btn-special" type="submit">
-          /ᐠ｡ꞈ｡ᐟ\
+        <label for="exampleFormControlInput1" class="form-label text-light m-3"><h3>KittenName:</h3></label>
+  <input type="text" class="form-control"  name="name" required>
+        <!-- <input placeholder="Name" type="text" name="name" /> -->
+        <button class="btn-special" class="" type="submit">
+          <i class="fa-solid fa-cat fa-2x"></i>
         </button>
+
       </div>
     </form>
   </header>
-<<<<<<< Updated upstream
-  <main class="container">
-    <div id="welcome" class="d-flex justify-content-center">
-      <div class="card p-2 text-center w-50">
+  <main class="">
+    
+    <!-- NOTE class name hidden is hiding welcome card -->
+    <div id="welcome" class="d-flex justify-content-center hidden">
+      <div class="card p-2 text-center align-items-center">
         <img src="moody-logo.png" height="250" width="" alt="Moody Kittens">
-=======
-  <main class=" text-center">
-    <div id="welcome" class="row d-flex space-around ">
-      <div class="card p-2 align-items-center w-50">
-        <img src="moody-logo.png" height="250" alt="Moody Kittens">
->>>>>>> Stashed changes
         <div class="mt-2">
           <b class="text-center">Hello Student</b>
           <p>This is your starter template only feel free to modify the look as you tackle the challenges that we have laid out.</p>
@@ -48,20 +46,17 @@
         </div>
       </div>
     </div>
-    <div class="p-2">
-      <div id="kittens" class="d-flex align-items-center flex-wrap">
+   
+      <div id="kittens" class="container-fluid ">
+        
       </div>
   </main>
   <footer class=" text-dark p-2 d-flex align-items-center justify-content-center">
     <small>Created with <span style="color: var(--primary)">&hearts;</span> by CodeWorks</small>
   </footer>
 
-<<<<<<< Updated upstream
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-=======
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
->>>>>>> Stashed changes
   <script src="app.js"></script>
 </body>
 
