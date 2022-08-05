@@ -10,6 +10,7 @@ drawKittens()//NOTE here it prevents page refresh from not drawing the kittens t
  */
 function addKitten(event) {
   event.preventDefault()//NOTE stops page refresh
+  
   let form= event.target
   let kitten= {
     id: generateId(),
